@@ -109,7 +109,7 @@ define(function (require) {
 		var idField = deFields.length > 0 ? $('#select-id-dropdown').val() : $('#select-id').val();
 
 		payload['arguments'].execute.inArguments = [{
-			'someField': '{{Event.' + eventDefinitionKey + '.\"' + idField + '\"}}'
+			'mobileNumber': '{{Event.' + eventDefinitionKey + '.\"' + idField + '\"}}'
 		}];
 
 		payload['metaData'] = payload['metaData'] || {};

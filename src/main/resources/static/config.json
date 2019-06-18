@@ -1,62 +1,44 @@
 {
-	"key": "<YOUR APPLICATION EXTENSION KEY HERE>",
+	"key": "f1a9d930-f3ed-4312-b7d6-c501c2f7eda9",
 	"metaData": {
 		"icon": "images/icon.png",
-		"iconSmall": "images/icon_small.png"
+		"iconSmall": "images/icon_small.png",
 	},
-	"type": "<TYPE, FOR CUSTOM ACTIVITY USE RESTDECISION>",
+	"type": "REST",
 	"lang": {
 		"en-US": {
-			"name": "<CUSTOM ACTIVITY NAME>",
-			"description": "<CUSTOM ACTIVITY DESCRIPTION>"
+			"name": "Fake WhatsApp Sender",
+			"description": "A custom activity to simulate a call to an API that sends WhatsApp messages"
 		}
 	},
 	"workflowApiVersion": "1.1",
 	"configurationArguments": {
-		"applicationExtensionKey": "<YOUR APPLICATION EXTENSION KEY HERE>",
+		"applicationExtensionKey": "f1a9d930-f3ed-4312-b7d6-c501c2f7eda9",
 		"save": {
-			"url": "https://<URL OF THE SERVER RUNNING THE BACKEND>/activity/save",
+			"url": "https://fake-whatsapp-custom-activity.herokuapp.com/activity/save",
 			"verb": "POST",
 			"body": "",
 			"useJwt": true,
-			"customerKey": "<EXTERNAL KEY OF THE SALT KEY FOR THE JWT>"
+			"customerKey": "3111a4d9-8e1d-49f9-b280-090c45e11ccf"
 		},
 		"publish": {
-			"url": "https://<URL OF THE SERVER RUNNING THE BACKEND>/activity/publish",
+			"url": "https://fake-whatsapp-custom-activity.herokuapp.com/activity/publish",
 			"verb": "POST",
 			"body": "",
 			"useJwt": true,
-			"customerKey": "<EXTERNAL KEY OF THE SALT KEY FOR THE JWT>"
+			"customerKey": "3111a4d9-8e1d-49f9-b280-090c45e11ccf"
 		},
 		"validate": {
-			"url": "https://<URL OF THE SERVER RUNNING THE BACKEND>/activity/validate",
+			"url": "https://fake-whatsapp-custom-activity.herokuapp.com/activity/validate",
 			"verb": "POST",
 			"body": "",
 			"useJwt": true,
-			"customerKey": "<EXTERNAL KEY OF THE SALT KEY FOR THE JWT>"
+			"customerKey": "3111a4d9-8e1d-49f9-b280-090c45e11ccf"
 		}
 	},
 	"wizardSteps": [
 		{"key": "eventdefinitionkey", "label": "Event Definition Key"},
 		{"key": "idselection", "label": "ID Selection"}
-	],
-	"outcomes": [
-		{
-			"arguments": {
-				"branchResult": "<KEY FOR PATH 1>"
-			},
-			"metaData": {
-				"label": "<LABEL FOR PATH 1>"
-			}
-		},
-		{
-			"arguments": {
-				"branchResult": "<KEY FOR PATH 2>"
-			},
-			"metaData": {
-				"label": "<LABEL FOR PATH 2>"
-			}
-		}
 	],
 	"userInterfaces": {
 		"runningModal": {
@@ -70,18 +52,18 @@
 		"execute": {
 			"inArguments": [],
 			"outArguments": [],
-			"url": "https://<URL OF THE SERVER RUNNING THE BACKEND>/activity/execute",
+			"url": "https://fake-whatsapp-custom-activity.herokuapp.com/activity/execute",
 			"verb": "POST",
 			"body": "",
 			"header": "",
 			"format": "json",
 			"useJwt": true,
-			"customerKey": "<EXTERNAL KEY OF THE SALT KEY FOR THE JWT>",
+			"customerKey": "3111a4d9-8e1d-49f9-b280-090c45e11ccf",
 			"timeout": 90000
 		}
 	},
 	"edit": {
-		"url": "https://<URL OF THE SERVER RUNNING THE BACKEND>/index.html",
+		"url": "https://fake-whatsapp-custom-activity.herokuapp.com/index.html",
 		"height": 200,
 		"width": 500
 	}

@@ -31,12 +31,12 @@ public class ActivityController {
     }
 
     @PostMapping("/execute")
-    public ActivityResult execute (@RequestBody ExecutePayload payload) {
+    public ResponseEntity<String>  execute (@RequestBody ExecutePayload payload) {
         for (Map<String, String> inArgument : payload.getInArguments()) {
-            if(inArgument.containsKey("status") && inArgument.get("status").equals("true")){
-                return new ActivityResult("true");
+            if(inArgument.containsKey("mobileNumber")){
+                System.out.println("WhatsApp message sent to: " + inArgument.get("mobileNumber"));
             }
         }
-        return new ActivityResult("false");
+        return new ResponseEntity<>("Executed", HttpStatus.OK);
     }
 }
