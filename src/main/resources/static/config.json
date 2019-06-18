@@ -2,7 +2,7 @@
 	"key": "f1a9d930-f3ed-4312-b7d6-c501c2f7eda9",
 	"metaData": {
 		"icon": "images/icon.png",
-		"iconSmall": "images/icon_small.png",
+		"iconSmall": "images/icon_small.png"
 	},
 	"type": "REST",
 	"lang": {
