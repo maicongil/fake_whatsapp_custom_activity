@@ -1,59 +1,32 @@
-# Custom Activity Spring Boot
+# fake whatsapp custom activity
 
-### Steps
-1. Clone this repo
-2. Edit custom activity configuration
-3. Customize configuration screen logic 
-4. Customize endpoint logic
-5. Deploy your app
+##Steps that I followed to make a new custom activity  
 
-### Files description
+* cloned [this repo](https://github.com/maicongil/boot_custom_activity)
+ 
+* Created a component Journey Builder Activity with key f1a9d930-f3ed-4312-b7d6-c501c2f7eda9
 
-##### boot_custom_activity/src/main/resources/static
-* **/images**: 
-* **/js**: Contains all necessary libs
-* **config.json**: Contains the configurations for the custom activity. These configurations may be overwriten in the configuration screen.
-* **customActivity.js**: Contains the logic to interact with Journey Builder and configuration screen(index.html)
-* **index.html**: This is the configuration screen to configure the custom activity in Journey Builder.
-* **runnigHover.html**
-* **runningModal.html**
+* Created a external key in Marketing Cloud (SALT)
+This is a secret = 0x54686973206973206120736563726574 
+[JWT Customer Key](https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-app-development.meta/mc-app-development/encode-custom-activities-using-jwt-customer-key.htm)
 
-##### /boot_custom_activity/src/main/java/com/boot/custom
+* created new app "fake-whatsapp-custom-activity.herokuapp.com" on heroku to host the custom activity 
 
-* **ActivityController.java**: Contains all the endpoints that will be called by Marketing Cloud Journey.
-* **ActivityResult.java**: A simple POJO to represent branchResult when building a custom split activity.
-* **CustomActivityApplication.java**: Entry point of Spring Boot Application
-* **ExecutePayload.java**: A POJO to represent the data sent by Jouney when the custom activity is triggered.
-* **RequestLoggingFilterConfig.java**: Configuration to enable logging requests.
+* Edit config.js file
+    * replaced YOUR APPLICATION EXTENSION KEY HERE with f1a9d930-f3ed-4312-b7d6-c501c2f7eda9
+    * replaced URL OF THE SERVER RUNNING THE BACKEND with fake-whatsapp-custom-activity.herokuapp.com
+    * replaced TYPE, FOR CUSTOM ACTIVITY USE RESTDECISION with REST
+    * replaced CUSTOM ACTIVITY NAME with Fake WhatsApp Sender
+    * replaced CUSTOM ACTIVITY DESCRIPTION A custom activity to simulate a call to an API that sends WhatsApp messages
+    * replaced EXTERNAL KEY OF THE SALT KEY FOR THE JWT with 3111a4d9-8e1d-49f9-b280-090c45e11ccf
+    * removed "outcomes" attribute because the type isn't RESTDECISION
 
-### Detailed Steps
+* changed the method save on customActivity.js to populate "mobileNumber" inArgument
 
-1. Clone this repo
+* edited the logic of execute endpoint in ActivityController.java
 
-2. Edit custom activity configuration
-    * Open config.js file
-    * Replace all placeholders as follows:
-        * YOUR APPLICATION EXTENSION KEY HERE
-        * TYPE, FOR CUSTOM SPLIT ACTIVITY USE RESTDECISION
-        * CUSTOM ACTIVITY NAME
-        * CUSTOM ACTIVITY DESCRIPTION
-        * URL OF THE SERVER RUNNING THE BACKEND
-        * EXTERNAL KEY OF THE SALT KEY FOR THE JWT
-    * If you aren't creating a custom aplit activity, remove the attribute "outcomes" else configure each path as you want.
-    * If you want to know more about custom split activities, please check out [this link](https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-app-development.meta/mc-app-development/extending-activities.htm)  
-    * If you want to learn more about configuration, please check out 
- [this link](https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-app-development.meta/mc-app-development/custom-activity-config.htm)
+* changed the icons
 
-3. Customize configuration screen logic 
-    * Open index.html and customActivity.js files
-    * These files already have a working example which update the "inAttibutes" in config.js with the value of the selected event data column. You can edit these files to add your own logic.
-    * If you want to add your own logic to configuration screen, you should check the [Postmonger events reference](https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-app-development.meta/mc-app-development/using-postmonger.htm)
+* deployed the app
 
-4. Customize endpoint logic
-
-5. Deploy your app
-
-
-### TODO
-
-* Secure endpoints with JWT
+* Verified if custom activity was working in Journey Builder
