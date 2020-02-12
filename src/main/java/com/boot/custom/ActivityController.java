@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
+import org.springframework.http.MediaType;
+
 @RestController
 @RequestMapping(value = "/activity", consumes = MediaType.ALL_VALUE, produces = MediaType.ALL_VALUE)
 public class ActivityController {
