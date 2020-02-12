@@ -18,25 +18,22 @@
 			"url": "https://fake-whatsapp-custom-activity.herokuapp.com/activity/save",
 			"verb": "POST",
 			"body": "",
-			"format": "json",
 			"useJwt": true,
-			"customerKey": "88f808c4-558d-4991-92ec-3f6aef68ce0a"
+			"customerKey": "3111a4d9-8e1d-49f9-b280-090c45e11ccf"
 		},
 		"publish": {
 			"url": "https://fake-whatsapp-custom-activity.herokuapp.com/activity/publish",
 			"verb": "POST",
 			"body": "",
-			"format": "json",
 			"useJwt": true,
-			"customerKey": "88f808c4-558d-4991-92ec-3f6aef68ce0a"
+			"customerKey": "3111a4d9-8e1d-49f9-b280-090c45e11ccf"
 		},
 		"validate": {
 			"url": "https://fake-whatsapp-custom-activity.herokuapp.com/activity/validate",
 			"verb": "POST",
 			"body": "",
-			"format": "json",
 			"useJwt": true,
-			"customerKey": "88f808c4-558d-4991-92ec-3f6aef68ce0a"
+			"customerKey": "3111a4d9-8e1d-49f9-b280-090c45e11ccf"
 		}
 	},
 	"wizardSteps": [
@@ -61,7 +58,7 @@
 			"header": "",
 			"format": "json",
 			"useJwt": true,
-			"customerKey": "88f808c4-558d-4991-92ec-3f6aef68ce0a",
+			"customerKey": "3111a4d9-8e1d-49f9-b280-090c45e11ccf",
 			"timeout": 90000
 		}
 	},

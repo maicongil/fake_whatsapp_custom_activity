@@ -7,26 +7,26 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/activity")
+@RequestMapping(value = "/activity", consumes = MediaType.ALL_VALUE, produces = MediaType.ALL_VALUE)
 public class ActivityController {
 
     @PostMapping("/save")
-    public ResponseEntity<String> save (@RequestBody Map<String, Object> payload) {
+    public ResponseEntity<String> save (@RequestBody String payload) {
         return new ResponseEntity<>("Save", HttpStatus.OK);
     }
 
     @PostMapping("/publish")
-    public ResponseEntity<String> publish (@RequestBody Map<String, Object> payload) {
+    public ResponseEntity<String> publish (@RequestBody String payload) {
         return new ResponseEntity<>("Publish", HttpStatus.OK);
     }
 
     @PostMapping("/validate")
-    public ResponseEntity<String> validate (@RequestBody Map<String, Object> payload) {
+    public ResponseEntity<String> validate (@RequestBody String payload) {
         return new ResponseEntity<>("Validate", HttpStatus.OK);
     }
 
     @PostMapping("/stop")
-    public ResponseEntity<String> stop (@RequestBody Map<String, Object> payload) {
+    public ResponseEntity<String> stop (@RequestBody String payload) {
         return new ResponseEntity<>("Stop", HttpStatus.OK);
     }
 
