@@ -18,6 +18,7 @@
 			"url": "https://fake-whatsapp-custom-activity.herokuapp.com/activity/save",
 			"verb": "POST",
 			"body": "",
+			"format": "json",
 			"useJwt": true,
 			"customerKey": "88f808c4-558d-4991-92ec-3f6aef68ce0a"
 		},
@@ -25,6 +26,7 @@
 			"url": "https://fake-whatsapp-custom-activity.herokuapp.com/activity/publish",
 			"verb": "POST",
 			"body": "",
+			"format": "json",
 			"useJwt": true,
 			"customerKey": "88f808c4-558d-4991-92ec-3f6aef68ce0a"
 		},
@@ -32,6 +34,7 @@
 			"url": "https://fake-whatsapp-custom-activity.herokuapp.com/activity/validate",
 			"verb": "POST",
 			"body": "",
+			"format": "json",
 			"useJwt": true,
 			"customerKey": "88f808c4-558d-4991-92ec-3f6aef68ce0a"
 		}
