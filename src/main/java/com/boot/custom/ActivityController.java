@@ -1,9 +1,6 @@
 package com.boot.custom;
 
-import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.Jwts;
-import java.util.Map;
-import javax.xml.bind.DatatypeConverter;
+import com.auth0.jwt.interfaces.DecodedJWT;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -22,14 +19,8 @@ public class ActivityController {
 
   @PostMapping("/save")
   public ResponseEntity<String> save(@RequestBody String payload) {
-    Claims claims = decodeJWT(payload);
-    claims.entrySet().stream()
-        .forEach(
-            entry ->
-                log.info(
-                    String.format(
-                        "JWT ENTRY - KEY: %s VALUE: %s", entry.getKey(), entry.getValue())));
-
+    DecodedJWT decode = JwtUtils.decode(payload);
+    log.info(decode.getPayload());
     return new ResponseEntity<>("Save", HttpStatus.OK);
   }
 
@@ -50,21 +41,11 @@ public class ActivityController {
 
   @PostMapping("/execute")
   public ResponseEntity<String> execute(@RequestBody ExecutePayload payload) {
-    for (Map<String, String> inArgument : payload.getInArguments()) {
-      if (inArgument.containsKey("mobileNumber")) {
-        System.out.println("WhatsApp message sent to: " + inArgument.get("mobileNumber"));
-      }
-    }
+    //    for (Map<String, String> inArgument : payload.getInArguments()) {
+    //      if (inArgument.containsKey("mobileNumber")) {
+    //        System.out.println("WhatsApp message sent to: " + inArgument.get("mobileNumber"));
+    //      }
+    //    }
     return new ResponseEntity<>("Executed", HttpStatus.OK);
-  }
-
-  public Claims decodeJWT(String jwt) {
-    // This line will throw an exception if it is not a signed JWS (as expected)
-    Claims claims =
-        Jwts.parser()
-            .setSigningKey(DatatypeConverter.parseBase64Binary(SECRET_KEY))
-            .parseClaimsJws(jwt)
-            .getBody();
-    return claims;
   }
 }
