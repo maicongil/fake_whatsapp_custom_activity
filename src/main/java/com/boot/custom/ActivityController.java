@@ -19,33 +19,47 @@ public class ActivityController {
 
   @PostMapping("/save")
   public ResponseEntity<String> save(@RequestBody String payload) {
-    DecodedJWT decode = JwtUtils.decode(payload);
-    log.info(decode.getPayload());
+    logReceivedData(payload);
     return new ResponseEntity<>("Save", HttpStatus.OK);
   }
 
   @PostMapping("/publish")
   public ResponseEntity<String> publish(@RequestBody String payload) {
+    logReceivedData(payload);
     return new ResponseEntity<>("Publish", HttpStatus.OK);
   }
 
   @PostMapping("/validate")
   public ResponseEntity<String> validate(@RequestBody String payload) {
+    logReceivedData(payload);
     return new ResponseEntity<>("Validate", HttpStatus.OK);
   }
 
   @PostMapping("/stop")
   public ResponseEntity<String> stop(@RequestBody String payload) {
+    logReceivedData(payload);
     return new ResponseEntity<>("Stop", HttpStatus.OK);
   }
 
   @PostMapping("/execute")
-  public ResponseEntity<String> execute(@RequestBody ExecutePayload payload) {
+  public ResponseEntity<String> execute(@RequestBody String payload) {
+    logReceivedData(payload);
     //    for (Map<String, String> inArgument : payload.getInArguments()) {
     //      if (inArgument.containsKey("mobileNumber")) {
     //        System.out.println("WhatsApp message sent to: " + inArgument.get("mobileNumber"));
     //      }
     //    }
     return new ResponseEntity<>("Executed", HttpStatus.OK);
+  }
+
+  private void logReceivedData(String payload) {
+    DecodedJWT decode = JwtUtils.decode(payload);
+    decode.getClaims().entrySet().stream()
+        .forEach(
+            entry ->
+                log.info(
+                    String.format(
+                        "JWT decoded entry - KEY: %s - VALUE: %s",
+                        entry.getKey(), entry.getValue())));
   }
 }
