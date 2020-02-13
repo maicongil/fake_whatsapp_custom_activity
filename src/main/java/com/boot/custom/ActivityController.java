@@ -60,6 +60,6 @@ public class ActivityController {
                 log.info(
                     String.format(
                         "JWT decoded entry - KEY: %s - VALUE: %s",
-                        entry.getKey(), entry.getValue())));
+                        entry.getKey(), entry.getValue().asString())));
   }
 }
