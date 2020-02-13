@@ -1,70 +1,76 @@
 {
-	"key": "c9eac25f-8f0a-4c33-9d0f-e4bd6ad7ce9e",
-	"metaData": {
-		"icon": "images/icon.png",
-		"iconSmall": "images/icon_small.png"
-	},
-	"type": "REST",
-	"lang": {
-		"en-US": {
-			"name": "Fake WhatsApp Sender",
-			"description": "A custom activity to simulate a call to an API that sends WhatsApp messages"
-		}
-	},
-	"workflowApiVersion": "1.1",
-	"configurationArguments": {
-		"applicationExtensionKey": "c9eac25f-8f0a-4c33-9d0f-e4bd6ad7ce9e",
-		"save": {
-			"url": "https://fake-whatsapp-custom-activity.herokuapp.com/activity/save",
-			"verb": "POST",
-			"body": "",
-			"useJwt": true,
-			"customerKey": "3111a4d9-8e1d-49f9-b280-090c45e11ccf"
-		},
-		"publish": {
-			"url": "https://fake-whatsapp-custom-activity.herokuapp.com/activity/publish",
-			"verb": "POST",
-			"body": "",
-			"useJwt": true,
-			"customerKey": "3111a4d9-8e1d-49f9-b280-090c45e11ccf"
-		},
-		"validate": {
-			"url": "https://fake-whatsapp-custom-activity.herokuapp.com/activity/validate",
-			"verb": "POST",
-			"body": "",
-			"useJwt": true,
-			"customerKey": "3111a4d9-8e1d-49f9-b280-090c45e11ccf"
-		}
-	},
-	"wizardSteps": [
-		{"key": "eventdefinitionkey", "label": "Event Definition Key"},
-		{"key": "idselection", "label": "ID Selection"}
-	],
-	"userInterfaces": {
-		"runningModal": {
-			"url": "runningModal.html"
-		},
-		"runningHover": {
-			"url": "runningHover.html"
-		}
-	},
-	"arguments": {
-		"execute": {
-			"inArguments": [],
-			"outArguments": [],
-			"url": "https://fake-whatsapp-custom-activity.herokuapp.com/activity/execute",
-			"verb": "POST",
-			"body": "",
-			"header": "",
-			"format": "json",
-			"useJwt": true,
-			"customerKey": "3111a4d9-8e1d-49f9-b280-090c45e11ccf",
-			"timeout": 90000
-		}
-	},
-	"edit": {
-		"url": "https://fake-whatsapp-custom-activity.herokuapp.com/index.html",
-		"height": 200,
-		"width": 500
-	}
+  "key": "c9eac25f-8f0a-4c33-9d0f-e4bd6ad7ce9e",
+  "metaData": {
+    "icon": "images/icon.png",
+    "iconSmall": "images/icon_small.png"
+  },
+  "type": "REST",
+  "lang": {
+    "en-US": {
+      "name": "Fake WhatsApp Sender",
+      "description": "A custom activity to simulate a call to an API that sends WhatsApp messages"
+    }
+  },
+  "workflowApiVersion": "1.1",
+  "configurationArguments": {
+    "applicationExtensionKey": "c9eac25f-8f0a-4c33-9d0f-e4bd6ad7ce9e",
+    "save": {
+      "url": "https://fake-whatsapp-custom-activity.herokuapp.com/activity/save",
+      "verb": "POST",
+      "body": "",
+      "useJwt": true,
+      "customerKey": "88f808c4-558d-4991-92ec-3f6aef68ce0a"
+    },
+    "publish": {
+      "url": "https://fake-whatsapp-custom-activity.herokuapp.com/activity/publish",
+      "verb": "POST",
+      "body": "",
+      "useJwt": true,
+      "customerKey": "88f808c4-558d-4991-92ec-3f6aef68ce0a"
+    },
+    "validate": {
+      "url": "https://fake-whatsapp-custom-activity.herokuapp.com/activity/validate",
+      "verb": "POST",
+      "body": "",
+      "useJwt": true,
+      "customerKey": "88f808c4-558d-4991-92ec-3f6aef68ce0a"
+    }
+  },
+  "wizardSteps": [
+    {
+      "key": "eventdefinitionkey",
+      "label": "Event Definition Key"
+    },
+    {
+      "key": "idselection",
+      "label": "ID Selection"
+    }
+  ],
+  "userInterfaces": {
+    "runningModal": {
+      "url": "runningModal.html"
+    },
+    "runningHover": {
+      "url": "runningHover.html"
+    }
+  },
+  "arguments": {
+    "execute": {
+      "inArguments": [],
+      "outArguments": [],
+      "url": "https://fake-whatsapp-custom-activity.herokuapp.com/activity/execute",
+      "verb": "POST",
+      "body": "",
+      "header": "",
+      "format": "json",
+      "useJwt": true,
+      "customerKey": "88f808c4-558d-4991-92ec-3f6aef68ce0a",
+      "timeout": 90000
+    }
+  },
+  "edit": {
+    "url": "https://fake-whatsapp-custom-activity.herokuapp.com/index.html",
+    "height": 200,
+    "width": 500
+  }
 }

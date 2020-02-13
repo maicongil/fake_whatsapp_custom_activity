@@ -18,7 +18,7 @@ This is a secret = 0x54686973206973206120736563726574
     * replaced TYPE, FOR CUSTOM ACTIVITY USE RESTDECISION with REST
     * replaced CUSTOM ACTIVITY NAME with Fake WhatsApp Sender
     * replaced CUSTOM ACTIVITY DESCRIPTION A custom activity to simulate a call to an API that sends WhatsApp messages
-    * replaced EXTERNAL KEY OF THE SALT KEY FOR THE JWT with 3111a4d9-8e1d-49f9-b280-090c45e11ccf
+    * replaced EXTERNAL KEY OF THE SALT KEY FOR THE JWT with 88f808c4-558d-4991-92ec-3f6aef68ce0a
     * removed "outcomes" attribute because the type isn't RESTDECISION
 
 * changed the method save on customActivity.js to populate "mobileNumber" inArgument
